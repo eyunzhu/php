@@ -4,6 +4,9 @@
     if(isset($_SESSION['username']) ){
         exit('您已经登入了，请不要重新登入');
     }
+    
+    
+    
     if(isset($_POST['submit'])){
     	//包含数据库连接文件
 		include 'conn.php';    	

@@ -1,0 +1,70 @@
+php学习笔记
+	header("Content-Type: text/html; charset=utf8");
+输出
+	echo 和 print
+可带标签
+	echo "<h1>Hello World! </h1>"; 
+ 
+
+
+大小写敏感
+	所有变量
+	$color、$COLOR 以及 $coLOR 被视作三个不同的变量
+大小写不敏感
+	用户定义的函数、类和关键词
+	例如 if、else、echo 等等
+	
+字符串  
+	单引号或双引号
+	"Hello world!"
+	'Hello world!'
+	
+数据类型输出
+	var_dump() 会返回变量的数据类型和值：
+	$x = 0.55985;
+	var_dump($x);
+	运行
+		float(0.55985)
+		
+数组定义
+	$cars=array("Volvo","BMW","SAAB");
+	
+PHP 常量
+	define("常量名称","常量值","大小写敏感false可选")
+	define("GREETING", "Welcome to W3School.com.cn!");
+	echo GREETING;
+	
+PHP_EOL 为换行符。	
+	
+PHP 魔术变量	
+	
+	__LINE__  文件中的当前行号	
+	__FILE__  文件的完整路径和文件名
+	__DIR__   文件的完整路径
+	
+	__FILE__ 返回其所在文件的路径+文件名
+	dirname(__FILE__) 返回__FILE__所在文件的路径部分
+	dirname(dirname(__FILE__));得到的是__FILE__所在文件的上一层目录名（不含最后一个“\”号）
+	
+例如，当前文件是 F:\Modoer_2.6_SC_UTF8\upload\test\a.php，则 
+	__FILE__ 得到的就是完整路径 即  F:\Modoer_2.6_SC_UTF8\upload\test\a.php ，而
+	dirname(__FILE__)得到路径部分 即  F:\Modoer_2.6_SC_UTF8\upload\test
+	dirname(dirname(__FILE__))，即：F:\Modoer_2.6_SC_UTF8\upload
+	
+	
+	__FUNCTION__  函数名称
+	__CLASS__     类的名称
+	
+class test {
+    function _print() {
+        echo '类名为：'  . __CLASS__ . "<br>";
+        echo  '函数名为：' . __FUNCTION__ ;
+    }
+}
+$t = new test();
+$t->_print();
+
+开启session（先判断开启状态）
+if(!isset($_SESSION)){
+    session_start();
+}
