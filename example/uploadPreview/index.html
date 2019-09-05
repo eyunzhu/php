@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>js上传图片预览示例</title>
+		 <style>
+.upload{
+    padding: 10px 0px 10px 0px;
+    height: 40px;
+    line-height: 20px;
+    position: relative;
+    text-decoration: none;
+    color: #666;
+}
+.change{
+    position: absolute;
+    overflow: hidden;
+    height: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0; 
+    cursor: hand;
+}
+
+    </style>
+	 <script type="text/javascript">  
+        function preview(obj){  
+            var img = document.getElementById("previewimg");  
+            img.src = window.URL.createObjectURL(obj.files[0]);  
+        }  
+    </script>  
+	</head>
+	<body>
+		<a href="javascript:;" class="upload">	
+					<img id="previewimg" src="" alt="选择" width="35px" height="35px" >
+				    <input class="change" type="file"  onChange="preview(this)" >
+		</a>  
+	</body>
+</html>
